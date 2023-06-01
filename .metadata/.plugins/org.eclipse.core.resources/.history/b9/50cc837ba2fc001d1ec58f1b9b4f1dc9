@@ -1,0 +1,9 @@
+package com.usama.productservicecommand.kafka.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class KafkaTopicConfig {
+
+	
+}

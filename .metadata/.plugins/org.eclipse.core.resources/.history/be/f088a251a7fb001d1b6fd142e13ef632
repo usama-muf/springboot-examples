@@ -1,0 +1,19 @@
+package com.usama.kafkademo.config;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class KafkaProducerConfig {
+
+	@Value("${spring.kafka.bootstrap-service}")
+	private String bootstrapString;
+	
+//	Configuration that will pass to producer factory
+	
+	public Map<String , Object> producerConfig() {
+		Map<String , Object> map = new HashMap<>();
+	}
+}

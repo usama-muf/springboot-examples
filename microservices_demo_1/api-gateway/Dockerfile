@@ -1,0 +1,13 @@
+#Installing base Image of JDK
+FROM eclipse-temurin:17-alpine
+WORKDIR /app
+
+COPY . /app
+
+EXPOSE 8081
+
+LABEL Maintainer="MOHAMMED USAMA"
+
+ADD target/api-gateway-0.0.1-SNAPSHOT.jar api-gateway-0.0.1-SNAPSHOT.jar
+
+ENTRYPOINT [ "java", "-jar", "api-gateway-0.0.1-SNAPSHOT.jar" ]

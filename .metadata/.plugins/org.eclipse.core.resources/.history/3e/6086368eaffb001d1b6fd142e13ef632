@@ -1,0 +1,13 @@
+package com.usama.kafkademo.component;
+
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class KafkaListner {
+
+	@KafkaListener
+	void listner(String data) {
+		
+	}
+}

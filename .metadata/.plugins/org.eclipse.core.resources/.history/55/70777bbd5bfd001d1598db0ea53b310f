@@ -1,0 +1,49 @@
+package com.usama.productservicequery.kafka.config;
+
+import org.apache.kafka.common.requests.ProduceRequest;
+import org.apache.kafka.common.serialization.Deserializer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class ProductDeserializer implements Deserializer<ProduceRequest> {
+
+	private Logger logger = LogManager.getLogger(this.getClass());
+
+	private final ObjectMapper objectMapper = new ObjectMapper();
+	
+	@Override
+	public ProduceRequest deserialize(String topic, byte[] data) {
+		
+		try {
+			return ob
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return null;
+	}
+
+//	private Class<T> type;
+//
+//	ProductDeserializer(Class type) {
+//		this.type = type;
+//	}
+//
+//	@Override
+//	public Object deserialize(String topic, byte[] data) {
+//
+//		ObjectMapper mapper = new ObjectMapper();
+//		T obj = null;
+//
+//		try {
+//			obj = mapper.readValue(data, type);
+//		} catch (Exception e) {
+//			logger.error(e.getMessage());
+//		}
+//
+//		return obj;
+//	}
+
+}

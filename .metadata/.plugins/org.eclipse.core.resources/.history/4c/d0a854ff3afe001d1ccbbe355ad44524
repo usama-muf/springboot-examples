@@ -1,0 +1,6 @@
+package com.usama.orderservice.entity;
+
+public class OrderRequest {
+
+	private List<Product> products;
+}

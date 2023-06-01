@@ -1,0 +1,11 @@
+package com.usama.orderservice.entity;
+
+import java.math.BigInteger;
+
+public class Product {
+	private String id;
+	private String name;
+	private boolean avaliability;
+	private BigInteger price;
+
+}

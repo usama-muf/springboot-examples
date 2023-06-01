@@ -1,0 +1,5 @@
+package com.usama.orderservice.repo;
+
+public class OrderRepository {
+
+}

@@ -1,0 +1,9 @@
+package com.usama.kafkademo.entity;
+
+public class Message {
+	
+	private Long id;
+	private String message;
+	private String description;
+
+}

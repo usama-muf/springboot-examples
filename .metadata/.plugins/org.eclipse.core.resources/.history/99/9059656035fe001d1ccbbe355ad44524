@@ -1,0 +1,5 @@
+package com.usama.productservice;
+
+public class ProductRepository {
+
+}

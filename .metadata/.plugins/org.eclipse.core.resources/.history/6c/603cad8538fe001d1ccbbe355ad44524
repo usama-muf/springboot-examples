@@ -1,0 +1,14 @@
+package com.usama.orderservice.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "order_table")
+public class Order {
+
+	private Long id;
+	private String generatedOn;
+	
+	
+}

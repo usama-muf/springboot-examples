@@ -1,0 +1,20 @@
+package com.usama.productservicequery.kafka.config;
+
+import org.apache.kafka.common.requests.ProduceRequest;
+import org.apache.kafka.common.serialization.Serializer;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class ProductSerializer implements Serializer<ProduceRequest> {
+
+	private final ObjectMapper objectMapper = new ObjectMapper();
+	@Override
+	public byte[] serialize(String topic, ProduceRequest data) {
+		try {
+			return objectMapper.writeValueAsBytes(data);
+		} catch (Exception e) {
+			throw new RuntimeException("Serialization Error : "+e.getMessage());
+		}
+	}
+
+}

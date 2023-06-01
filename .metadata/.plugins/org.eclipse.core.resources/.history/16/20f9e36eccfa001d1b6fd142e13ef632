@@ -1,0 +1,7 @@
+package com.usama.productservicequery.query.api.config;
+
+import com.datastax.astra.boot.autoconfigure.AstraClientProperties;
+
+public class CassandraConfig extends AstraClientProperties {
+
+}

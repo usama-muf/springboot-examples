@@ -1,0 +1,60 @@
+package com.microservice.userservice;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.microservice.userservice.dto.OrderDto;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.core.lang.Nullable;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/user-service")
+public class UserServiceApplication {
+
+	@Autowired
+	@Lazy
+	private RestTemplate restTemplate;
+	private static final String baseUrl = "http://localhost:8081/orders";
+
+	public static void main(String[] args) {
+		SpringApplication.run(UserServiceApplication.class, args);
+	}
+
+	@GetMapping("/displayOrders")
+	@CircuitBreaker(name = "tempCircuiBreaker", fallbackMethod = "getAllAvailableOrders")
+	public List<OrderDto> displayOrders(@RequestParam("category") String category) {
+		System.out.println(category);
+		String url = category == null ? baseUrl : baseUrl + "/" + category;
+		return restTemplate.getForObject(url, ArrayList.class);
+	}
+
+	
+	public List<OrderDto> getAllAvailableOrders(Exception e) {
+		return Stream.of(new OrderDto(1,"mobile", "electronics", "white", 20000),
+                new OrderDto(2, "T-Shirt", "clothes", "black", 999),
+                new OrderDto(3, "Jeans", "clothes", "blue", 1999)).collect(Collectors.toList());
+	}
+	
+	
+	
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+
+}

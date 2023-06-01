@@ -1,0 +1,18 @@
+FROM maven:3-eclipse-temurin-17-alpine
+#FROM eclipse-temurin:17-alpine
+FROM openJdk:jdk-11
+
+RUN mvn -v
+COPY . /app
+
+#Add app /app
+
+WORKDIR /app
+
+RUN ls
+RUN pwd 
+
+ADD src/main/java/com/usama/dockerdemo/Forever.java Forever.java
+
+RUN javac Forever.java
+	

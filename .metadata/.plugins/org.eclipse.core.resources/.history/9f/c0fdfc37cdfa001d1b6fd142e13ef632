@@ -1,0 +1,43 @@
+package com.usama.productservicequery.query.api.config;
+
+import com.datastax.astra.boot.autoconfigure.AstraClientProperties;
+
+public class CassandraConfig extends AstraClientProperties {
+	
+	private String clientId;
+	private String applicationToken;
+	private String clientSecret;
+	private String cloudRegion;
+	private String databaseId;
+	private String keyspace;
+
+	@Override
+    public String getClientId() {
+        return clientId;
+    }
+
+    @Override
+    public String getApplicationToken() {
+        return applicationToken;
+    }
+
+    @Override
+    public String getClientSecret() {
+        return clientSecret";
+    }
+
+    @Override
+    public String getCloudRegion() {
+        return cloudRegion;
+    }
+
+    @Override
+    public String getDatabaseId() {
+        return databaseId;
+    }
+
+    @Override
+    public String getKeyspace() {
+        return keyspace;
+    }
+}

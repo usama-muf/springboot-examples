@@ -1,0 +1,6 @@
+1684838005009	Rename package 'com.usama.productservicecommand.command.api.model'
+1684838356153	Rename type 'CreateProductQuery'
+1684838392304	Rename package 'com.usama.productservicequery.query.api.query'
+1684848418607	Rename type 'GetProductQuery'
+1684848561430	Rename type 'getProductByNameQuery'
+1685004665093	Delete element

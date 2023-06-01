@@ -1,0 +1,10 @@
+package com.usama.orderservice.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table("order_table")
+public class Order {
+
+}

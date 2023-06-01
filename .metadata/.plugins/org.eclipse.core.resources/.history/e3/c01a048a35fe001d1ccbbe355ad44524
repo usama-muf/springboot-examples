@@ -1,0 +1,5 @@
+package com.usama.productservice.service;
+
+public class ProductServiceImpl {
+
+}

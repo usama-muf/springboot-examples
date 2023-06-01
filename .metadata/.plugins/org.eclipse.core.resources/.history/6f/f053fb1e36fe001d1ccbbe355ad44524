@@ -1,0 +1,7 @@
+package com.usama.productservice.service;
+
+
+public interface ProductService {
+	
+
+}

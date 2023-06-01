@@ -1,0 +1,8 @@
+package com.usama.orderservice.entity;
+
+import java.util.List;
+
+public class OrderRequest {
+
+	private List<Product> products;
+}

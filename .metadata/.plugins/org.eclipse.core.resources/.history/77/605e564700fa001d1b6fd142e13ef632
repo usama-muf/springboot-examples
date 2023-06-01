@@ -1,0 +1,13 @@
+package com.usama.productservicecommand.command.api.commands;
+
+import java.math.BigDecimal;
+
+public class UpdateProductCommand {
+	
+	
+	private String name;
+	private BigDecimal price;
+	private Integer quantity;
+
+
+}

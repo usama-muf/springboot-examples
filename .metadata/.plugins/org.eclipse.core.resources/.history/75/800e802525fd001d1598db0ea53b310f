@@ -1,0 +1,27 @@
+package com.usama.productservicequery.kafka.config;
+
+import java.util.Map;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.KafkaListenerContainerFactory;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
+
+@Configuration
+public class KafkaConsumerConfig {
+	
+	public Map<String, String> consumerConfig() {
+		return null;
+		
+	}
+	
+	public ConsumerFactory<String, String> consumerFactory() {
+		return null;
+	}
+	
+	public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> containerFactory() {
+		return null;
+	}
+	
+
+}

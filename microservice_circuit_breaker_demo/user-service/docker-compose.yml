@@ -1,0 +1,21 @@
+version: '3'
+services:
+  category-service:
+    image: circuit-b-catalogue-service:latest
+    ports:
+      - 8081:8081  # Assuming your category-service listens on port 8081
+    networks:
+      - my-network
+
+  user-service:
+    image: circuit-b-user-service:latest
+    ports:
+      - 8082:8082  # Assuming your user-service listens on port 8082
+    environment:
+      - CATEGORY_SERVICE_URL=http://localhost:8081/orders  # Set the URL of category-service
+    networks:
+      - my-network
+
+
+networks:
+  my-network:

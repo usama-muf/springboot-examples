@@ -1,0 +1,80 @@
+package com.usama.productservicequery.query.api.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.cassandra.core.CassandraTemplate;
+import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
+
+import com.datastax.astra.boot.autoconfigure.AstraClientProperties;
+
+@Configuration
+@EnableCassandraRepositories // (basePackages = {"com.usama.productservicequery"})
+@EnableAutoConfiguration
+public class CassandraConfig extends AstraClientProperties {
+
+	@Value("${astra.client-id}")
+	private String clientId;
+	@Value("${astra.application-token}")
+	private String applicationToken;
+	@Value("${astra.client-secret}")
+	private String clientSecret;
+	@Value("${astra.cloud-region}")
+	private String cloudRegion;
+	@Value("${astra.database-id}")
+	private String databaseId;
+	@Value("${astra.keyspace}")
+	private String keyspaceName;
+	@Value("${spring.data.cassandra.port}")
+	private int port;
+
+	@Override
+	public String getClientId() {
+		return clientId;
+	}
+
+	@Override
+	public String getApplicationToken() {
+		return applicationToken;
+	}
+
+	@Override
+	public String getClientSecret() {
+		return clientSecret;
+	}
+
+	@Override
+	public String getCloudRegion() {
+		return cloudRegion;
+	}
+
+	@Override
+	public String getDatabaseId() {
+		return databaseId;
+	}
+
+	@Override
+	public String getKeyspace() {
+		return keyspaceName;
+	}
+
+	@Bean
+	public CassandraTemplate cassandraTemplate() {
+		return new CassandraTemplate(cassandraSession(), cassandraMapping());
+	}
+
+	@Bean
+	public CassandraSession cassandraSession() {
+		return CassandraSession.builder().withKeyspace(keyspaceName).addContactPoint(contactPoints, port)
+				// additional configuration if required
+				.build();
+	}
+
+	@Bean
+	public CassandraMappingContext cassandraMapping() {
+		CassandraMappingContext mappingContext = new CassandraMappingContext();
+		mappingContext.setUserTypeResolver(new SimpleUserTypeResolver(cassandraSession()));
+		return mappingContext;
+	}
+}

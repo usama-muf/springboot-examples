@@ -1,0 +1,11 @@
+package com.usama.productservicequery.kafka.config;
+
+import org.apache.kafka.common.requests.ProduceRequest;
+import org.apache.kafka.common.serialization.Deserializer;
+import org.apache.kafka.common.serialization.Serializer;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class ProductDeserializer<T> implements Deserializer{
+
+}

@@ -1,0 +1,24 @@
+package com.usama.kafkademo.entity;
+
+public class MessageRequest {
+
+	private Long id;
+	private String message;
+	private String description;
+	
+	
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public MessageRequest(String message) {
+		this.message = message;
+	}
+
+	public MessageRequest() {}
+	
+}

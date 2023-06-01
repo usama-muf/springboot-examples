@@ -1,0 +1,38 @@
+package com.usama.kafkademo.config;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.ProducerFactory;
+
+import com.fasterxml.jackson.databind.ser.std.StringSerializer;
+
+@Configuration
+public class KafkaProducerConfig {
+
+	@Value("${spring.kafka.bootstrap-service}")
+	private String bootstrapString;
+
+//	Configuration that will pass to producer factory
+
+	public Map<String, Object> producerConfig() {
+		Map<String, Object> property = new HashMap<>();
+		property.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapString);
+		property.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		property.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+
+		return property;
+
+	}
+
+//	producer factory is responsibel for creating producer instances
+
+	public ProducerFactory<String, String> producerFactory(Map<String, Object> producerConfig) {
+		return new DefaultKafkaProducerFactory<>(producerConfig);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.usama.productservicequery.query.api.repository;
+
+import org.springframework.data.cassandra.repository.CassandraRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.usama.productservicequery.query.api.entity.Product;
+
+//public interface ProductRepository extends JpaRepository<Product, String>{
+	public interface ProductRepository extends CassandraRepository<Product, String>{
+	Product findByName(String name);
+
+}

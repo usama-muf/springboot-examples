@@ -1,0 +1,94 @@
+//package com.usama.productservicequery.query.api.config;
+//
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.data.cassandra.config.CqlSessionFactoryBean;
+//import org.springframework.data.cassandra.core.CassandraTemplate;
+//import org.springframework.data.cassandra.core.convert.CassandraConverter;
+//import org.springframework.data.cassandra.core.convert.MappingCassandraConverter;
+//import org.springframework.data.cassandra.core.mapping.CassandraMappingContext;
+//import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
+//
+//import com.datastax.oss.driver.api.core.CqlSession;
+//
+//@Configuration
+////@EnableCassandraRepositories (basePackages = {"com.usama.productservicequery"})
+////@EnableAutoConfiguration
+//public class CassandraConfig {//extends AstraClientProperties {
+//
+//	@Value("${astra.client-id}")
+//	private String clientId;
+//	@Value("${astra.application-token}")
+//	private String applicationToken;
+//	@Value("${astra.client-secret}")
+//	private String clientSecret;
+//	@Value("${astra.cloud-region}")
+//	private String cloudRegion;
+//	@Value("${astra.database-id}")
+//	private String databaseId;
+//	@Value("${astra.keyspace}")
+//	private String keyspaceName;
+//	@Value("${spring.data.cassandra.port}")
+//	private int port;
+//	@Value("${spring.data.cassandra.contact-points}")
+//	private String contactPoints;
+//	@Value("${spring.data.cassandra.local-datacenter}")
+//    private String localDatacenter;
+////
+////	@Override
+////	public String getClientId() {
+////		return clientId;
+////	}
+////
+////	@Override
+////	public String getApplicationToken() {
+////		return applicationToken;
+////	}
+////
+////	@Override
+////	public String getClientSecret() {
+////		return clientSecret;
+////	}
+////
+////	@Override
+////	public String getCloudRegion() {
+////		return cloudRegion;
+////	}
+////
+////	@Override
+////	public String getDatabaseId() {
+////		return databaseId;
+////	}
+////
+////	@Override
+////	public String getKeyspace() {
+////		return keyspaceName;
+////	}
+//
+//	@Bean
+//	public CqlSessionFactoryBean session() {
+//		CqlSessionFactoryBean session = new CqlSessionFactoryBean();
+//        session.setContactPoints(contactPoints);
+//        session.setPort(port);
+//        session.setKeyspaceName(keyspaceName);
+//        session.setLocalDatacenter(localDatacenter); // Set the local datacenter
+//        return session;
+//	}
+//
+//	@Bean
+//	public CassandraMappingContext mappingContext() {
+//		return new CassandraMappingContext();
+//	}
+//
+//	@Bean
+//	public CassandraConverter converter() {
+//		return new MappingCassandraConverter(mappingContext());
+//	}
+//
+//	@Bean
+//	public CassandraTemplate cassandraTemplate(CqlSession session, CassandraConverter converter) {
+//		return new CassandraTemplate(session, converter);
+//	}
+//}

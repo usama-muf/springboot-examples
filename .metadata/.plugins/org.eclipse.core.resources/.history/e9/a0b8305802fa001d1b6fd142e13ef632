@@ -1,0 +1,10 @@
+package com.usama.productservicecommand.command.api.event;
+
+import java.math.BigDecimal;
+
+public class ProductUpdatedEvent {
+
+	private String name;
+	private BigDecimal price;
+	private Integer quantity;
+}

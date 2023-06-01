@@ -1,0 +1,5 @@
+package com.usama.productservicecommand.command.api.entity;
+
+public class ProductSerializer {
+
+}

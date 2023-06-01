@@ -1,0 +1,5 @@
+package com.usama.kafkademo.config;
+
+public class ProductSerializer {
+
+}

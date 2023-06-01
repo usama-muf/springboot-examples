@@ -1,0 +1,26 @@
+package com.usama.productservicecommand.kafka.config;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.KafkaTemplate;
+
+@Configuration
+public class KafkaProducerConfig {
+
+	@Value("${spring.kafka.bootstrap-service}")
+	private String bootstrap;
+	
+	public Map<String, String> producerConfig(){
+		return null;
+	}
+	
+	public Map<String, String> methodFactory() {
+		return null;
+	}
+	
+	public KafkaTemplate<String, String> kafkaTemplate() {
+		return null;
+	}
+}

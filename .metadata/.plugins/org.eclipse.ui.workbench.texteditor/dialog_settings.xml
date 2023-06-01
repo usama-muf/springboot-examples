@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="613"/>
+		<item key="DIALOG_Y_ORIGIN" value="339"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="Close"/>
+		<list key="findhistory">
+			<item value="Close"/>
+			<item value="close"/>
+			<item value="Book"/>
+			<item value="User"/>
+			<item value="json"/>
+			<item value="ProduceRequest"/>
+			<item value="&lt;?xml"/>
+			<item value="jakarta"/>
+			<item value="employeeModelAssembler"/>
+			<item value="public-client"/>
+			<item value="BookingManager"/>
+			<item value="passwordEncoder"/>
+			<item value="ninside"/>
+			<item value="inside"/>
+			<item value="jwtUtil"/>
+		</list>
+		<list key="replacehistory">
+			<item value="ProductRequest"/>
+			<item value="JwtTokenHelper"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1340"/>
+		<item key="DIALOG_Y_ORIGIN" value="120"/>
+		<item key="DIALOG_WIDTH" value="362"/>
+		<item key="DIALOG_HEIGHT" value="490"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|10.2|0|WINDOWS|1|-17|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

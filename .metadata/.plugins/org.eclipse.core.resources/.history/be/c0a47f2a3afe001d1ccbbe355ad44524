@@ -1,0 +1,34 @@
+package com.usama.orderservice.service;
+
+import java.util.List;
+
+import com.usama.orderservice.entity.Order;
+import com.usama.orderservice.repo.OrderRepository;
+
+public class OrderServiceImpl implements OrderService {
+
+	private final OrderRepository orderRepo;
+
+	public OrderServiceImpl(OrderRepository orderRepo) {
+		this.orderRepo = orderRepo;
+	}
+
+	@Override
+	public List<Order> getAllOrder() {
+		return orderRepo.findAll();
+		
+	}
+
+	@Override
+	public Order getOrderById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createOrder(Order order) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

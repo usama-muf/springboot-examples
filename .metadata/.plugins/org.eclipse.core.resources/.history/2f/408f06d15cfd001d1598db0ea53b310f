@@ -1,0 +1,14 @@
+package com.usama.productservicequery.kafka.listner;
+
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class KafkaListner {
+
+	@KafkaListener(groupId = "kafkademogroup", topics = "kafkademotopic")
+	public void listen(String data) { 
+		System.out.println(data);
+	}
+	
+}

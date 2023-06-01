@@ -1,0 +1,6 @@
+package com.usama.orderservice.entity;
+
+@Entity
+public class Order {
+
+}

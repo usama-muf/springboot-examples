@@ -1,0 +1,20 @@
+package com.usama.productservicecommand.command.api.commands;
+
+import java.math.BigDecimal;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
+public class UpdateProductCommand {
+	
+	
+	private String name;
+	private BigDecimal price;
+	private Integer quantity;
+
+
+}

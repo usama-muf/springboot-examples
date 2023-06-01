@@ -1,0 +1,39 @@
+package com.usama.productservice.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.usama.productservice.entity.Product;
+import com.usama.productservice.repo.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+
+	private final ProductRepository productRepository;
+	
+	@Override
+	public List<Product> getAllProducts() {
+		return ;
+	}
+
+	@Override
+	public Product getProductById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createProduct(Product product) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateProduct(Long id, Product product) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

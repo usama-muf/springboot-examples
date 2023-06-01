@@ -1,0 +1,43 @@
+package com.usama.kafkademo;
+
+import java.util.Iterator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.kafka.core.KafkaTemplate;
+
+import com.usama.kafkademo.config.KafkaProducerConfig;
+
+@SpringBootApplication
+public class KafkaDemoApplication  {
+
+	@Autowired
+	private KafkaProducerConfig kafkaProducerConfig;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(KafkaDemoApplication.class, args);
+	}
+
+	
+	
+	@Bean
+	CommandLineRunner commandLineRunner(KafkaTemplate<String, String> kafkaTemplate) {
+		return args-> {
+			for (int i = 0; i < 1_000_000; i++) {
+				
+				kafkaTemplate.send("kafkademotopic", "this from kafka " + i);
+			}
+		};
+	}
+
+
+//	@Override
+//	public void run(String... args) throws Exception {
+//		kafkaProducerConfig.kafkaTemplate().send("kafkademotopic", "this from kafka👌🏼👌🏼");
+//
+//	}
+
+}

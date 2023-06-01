@@ -1,0 +1,5 @@
+package com.usama.productservice.entity;
+
+public class Entity {
+
+}

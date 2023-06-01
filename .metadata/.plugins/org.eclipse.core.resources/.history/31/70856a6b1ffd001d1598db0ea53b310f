@@ -1,0 +1,14 @@
+package com.usama.productservicecommand.kafka.config;
+
+import org.apache.kafka.common.serialization.Serializer;
+
+import com.usama.productservicecommand.command.api.entity.Product;
+
+public class ProductSerializer implements Serializer<Product>{
+
+	@Override
+	public byte[] serialize(String topic, Product data) {
+		return null;
+	}
+ 
+}

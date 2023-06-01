@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		<!-- 
+	<bean id="helloWorldService" name="HelloWorldServiceBean" class="com.usama.spring_demo_sts.HelloWorldService"></bean>
+	<bean id="engineer" class="com.usama.spring_demo_sts.Engineer" lazy-init="true" init-method="init" destroy-method="destroy">
+		
+		<property name="address"><ref bean="address"/></property>
+		
+		
+		<constructor-arg type="int" name="city" value="Tunda"/>
+		<constructor-arg type="java.lang.String" name="id" value="122"/>
+		-->
+<!-- 
+	</bean>
+	<bean id="manager" class="com.usama.spring_demo_sts.Manager"></bean>
+	<bean id="address" class="com.usama.spring_demo_sts.Address">
+		<property name="id" value="01"/>
+		<property name="city" value="Chandigarh"></property>
+	</bean>
+ -->
+	
+	
+	<!-- 
+	Medium Bean
+	<bean id="app" class="com.usama.spring_demo_sts.medium.App" lazy-init="true">
+		<constructor-arg ref="logger"/>
+	</bean>
+	<bean id="database" class="com.usama.spring_demo_sts.medium.Database" init-method="run"/>
+	<bean id="logger" class="com.usama.spring_demo_sts.medium.Logger" init-method="run"/>
+	<bean id="mail" class="com.usama.spring_demo_sts.medium.Mail" init-method="run"/>
+	-->
+	
+	<context:component-scan base-package="com.usama.spring_demo_sts.medium"/>
+	
+	
+	
+</beans>

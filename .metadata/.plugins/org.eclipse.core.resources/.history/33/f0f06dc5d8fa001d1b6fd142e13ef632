@@ -1,0 +1,5 @@
+package com.usama.productservicequery.query.api.config;
+
+public class CassandraConfig1 {
+
+}

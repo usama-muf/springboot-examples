@@ -1,0 +1,35 @@
+#spring.main.web-application-type=servlet
+
+#spring.main.web-application-type=reactive
+server.port=8081
+
+#eureka.instance.hostname=service-discovery
+#eureka.instance.hostname=api-gateway
+eureka.instance.hostname=localhost
+
+spring.application.name=api-gateway
+
+#eureka.client.serviceUrl.defaultZone=http://service-discovery:8761/eureka
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+
+logging.level.root=INFO
+logging.level.org.springframework.cloud.gateway.route.RouteDefinitionLocator=INFO
+logging.level.org.springframework.cloud.gateway=TRACE
+
+#Service-1 Route
+spring.cloud.gateway.routes[0].id=SERVICE-1
+spring.cloud.gateway.routes[0].uri=lb://SERVICE-1
+spring.cloud.gateway.routes[0].predicates=Path=/s1/**
+
+#Service-2 routes
+spring.cloud.gateway.routes[1].id=SERVICE-2
+spring.cloud.gateway.routes[1].uri=lb://SERVICE-2
+spring.cloud.gateway.routes[1].predicates=Path=/s2/**
+#spring.cloud.gateway.routes[1].predicates=Method=get,post
+
+#product-service-queryroutes
+spring.cloud.gateway.routes[1].id=product-service-query
+spring.cloud.gateway.routes[1].uri=lb://product-service-query
+spring.cloud.gateway.routes[1].predicates=Path=/product/**
+#spring.cloud.gateway.routes[1].predicates=Method=get,post
+

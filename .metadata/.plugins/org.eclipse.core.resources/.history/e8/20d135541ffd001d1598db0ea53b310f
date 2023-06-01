@@ -1,0 +1,7 @@
+package com.usama.productservicecommand.command.api.entity;
+
+public class ProductRequest {
+
+	private String mappingType;
+	private Product product;
+}

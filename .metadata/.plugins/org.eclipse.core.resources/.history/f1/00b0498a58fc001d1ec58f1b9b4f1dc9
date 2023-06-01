@@ -1,0 +1,15 @@
+package com.usama.kafkademo.config;
+
+import org.apache.kafka.common.serialization.Serializer;
+
+import com.usama.kafkademo.entity.MessageRequest;
+
+public class ProductSerializer implements Serializer<MessageRequest> {
+
+	@Override
+	public byte[] serialize(String topic, MessageRequest data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

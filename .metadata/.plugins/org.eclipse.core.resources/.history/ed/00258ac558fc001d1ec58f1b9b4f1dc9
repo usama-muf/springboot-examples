@@ -1,0 +1,4 @@
+
+server.port=8090
+spring.kafka.bootstrap-service=localhost:9092
+spring.batch.job.enabled=false

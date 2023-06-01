@@ -1,0 +1,5 @@
+package com.usama.kafkademo.entity;
+
+public class Message {
+
+}

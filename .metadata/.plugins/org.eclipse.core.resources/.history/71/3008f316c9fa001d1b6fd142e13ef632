@@ -1,0 +1,50 @@
+package com.usama.productservicequery.query.api.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.cassandra.core.CassandraTemplate;
+import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
+
+
+@Configuration
+@EnableCassandraRepositories(basePackages = "com.usama.productservicequery.query.api.repository")
+public class CassandraConfig {// extends AbstractCassandraConfiguration {
+	/*
+	 * @Override protected String getKeyspaceName() {
+	 * 
+	 * return "cassandra_key_space"; }
+	 * 
+	 * @Override public String getContactPoints() { return "127.0.0.1"; }
+	 * 
+	 * @Override protected int getPort() { return 9042; }
+	 */
+
+	@Value("${spring.data.cassandra.contact-points}")
+	private String contactPoints;
+
+	@Value("${spring.data.cassandra.port}")
+	private int port;
+
+	@Value("${spring.data.cassandra.keyspace-name}")
+	private String keyspaceName;
+
+	@Bean
+	public CassandraTemplate cassandraTemplate() {
+		return new CassandraTemplate(cassandraSession(), cassandraMapping());
+	}
+
+	@Bean
+	public CassandraSession cassandraSession() {
+		return CassandraSession.builder().withKeyspace(keyspaceName).addContactPoint(contactPoints, port)
+				// additional configuration if required
+				.build();
+	}
+
+	@Bean
+	public CassandraMappingContext cassandraMapping() {
+		CassandraMappingContext mappingContext = new CassandraMappingContext();
+		mappingContext.setUserTypeResolver(new SimpleUserTypeResolver(cassandraSession()));
+		return mappingContext;
+	}
+}
